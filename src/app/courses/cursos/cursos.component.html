@@ -1,24 +1,17 @@
-<div class='container'>
-  <div class='row'><p>Lista de Cursos</p></div>
-  <div class='row'>
-      <div id="accordion">
-        <div class="card" *ngFor='let curso of myCurso'>
-          <div class="card-header" id='{{curso.id}}'>
-            <h5 class="mb-0">
-              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                  {{curso.title}}
-              </button>
-            </h5>
-          </div>
-          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-            <div class="card-body">
-              <p>Número de aulas: {{curso.qtdAulas}}</p>
-              <p>Apenas: {{curso.price}}</p>
-              <p>Código: {{ curso.id }}</p>
-              <button class='btn btn-info' [routerLink]="['/course', curso.id]">Ler+</button>
-            </div>
-          </div>
-        </div>
-      </div>
+<div class='container center'>
+  <div class="row">
+    <div class='col-sm-6'>
+      <ul class="list-group">
+        <li *ngFor="let curso of myCurso" class="list-group-item">
+          <a [routerLink]="['course', curso.id]" routerLinkActive="router-link-active">
+            {{curso.title}}
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!--- Local onde o componente da rota filha será renderizado -->
+    <div class='col-sm-6'>
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>
