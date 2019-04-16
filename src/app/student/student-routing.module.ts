@@ -5,8 +5,10 @@ import { AlunoDetailsComponent } from './aluno-details/aluno-details.component';
 import { AlunoComponent } from './aluno/aluno.component';
 
 const routes: Routes = [
-  {path: 'students', component: AlunoComponent},
-  {path: 'student/:id', component: AlunoDetailsComponent}
+  {path: 'students', component: AlunoComponent, children: [
+    {path: 'student/new', component: AlunoDetailsComponent},
+    {path: 'student/:id', component: AlunoDetailsComponent}
+  ]}
 ];
 
 @NgModule({
