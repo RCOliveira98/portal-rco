@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { StudentService } from '../student.service';
+
+import { StudentModel } from './../student.model';
+
 @Component({
   selector: 'app-aluno',
   templateUrl: './aluno.component.html',
@@ -7,9 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlunoComponent implements OnInit {
 
-  constructor() { }
+  public alunos: Array<StudentModel>;
+
+  constructor(private servAlunos: StudentService ) { }
 
   ngOnInit() {
+    this.alunos = this.servAlunos.getStudentsAll();
+  }
+
+  public getStudent(id: number): StudentModel {
+    return this.servAlunos.getStudentById(id);
   }
 
 }
