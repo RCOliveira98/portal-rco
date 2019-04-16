@@ -1,3 +1,17 @@
-<p>
-  aluno works!
-</p>
+<div class='container align-items-center' style="padding: 5px;">
+    <div class="row">
+      <div class='col-sm-6'>
+        <ul class="list-group">
+          <li *ngFor="let student of alunos" class="list-group-item">
+            <a [routerLink]="['student', student.id]" routerLinkActive="router-link-active">
+              {{student.name}} - {{student.email}}
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!--- Local onde o componente da rota filha será renderizado -->
+      <div class='col-sm-6'>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+</div>
