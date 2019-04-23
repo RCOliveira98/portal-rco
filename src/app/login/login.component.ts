@@ -10,7 +10,7 @@ import { AuthServiceService } from '../auth-service.service';
 })
 export class LoginComponent implements OnInit {
 
-  public user = new UserModel();
+  public user = new UserModel(); // necessário instanciar o objeto
   public logado: boolean;
   constructor(private autenticate: AuthServiceService) { }
 
@@ -20,7 +20,6 @@ export class LoginComponent implements OnInit {
   }
 
   public logar(user: UserModel): void {
-    console.log(user);
     this.autenticate.logar(user);
   }
 

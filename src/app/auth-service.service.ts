@@ -11,7 +11,6 @@ export class AuthServiceService {
   constructor() { }
 
   public logar(user: UserModel): void {
-    console.log(user);
     if (user.name === 'Romario' && user.senha === '123456') {
       this.logado = true;
     } else {
