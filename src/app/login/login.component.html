@@ -1,11 +1,11 @@
-<div class='container center'>
+<div class='container center border'>
     <div class="row">
         <h4>Login de Usuário</h4>
     </div>
     <div class="row">
-       <div class="input-group mb-3">
+        <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text">Usuário:</span>
+                <span class="input-group-text">Usuário:</span>
             </div>
             <input [(ngModel)]="user.name" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
         </div>
@@ -14,13 +14,13 @@
     <div class="row">
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text">--Senha:</span>
+                <span class="input-group-text">--Senha:</span>
             </div>
             <input [(ngModel)]="user.senha" type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon2">
         </div>
     </div>
 
     <div class='row'>
-      <button class='btn btn-outline-primary' (click)='logar(user)'>Login</button>
+        <button class='btn btn-outline-primary' (click)='logar(user)'>Login</button>
     </div>
 </div>

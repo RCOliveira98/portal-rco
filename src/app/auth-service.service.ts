@@ -12,14 +12,19 @@ export class AuthServiceService {
   constructor(private router: Router) { }
 
   public logar(user: UserModel): void {
-    if (user.name === 'Romario' && user.senha === '123456') {
+    if (user.name === 'rco' && user.senha === '123') {
       this.logado = true;
       // redirecione para home
       this.router.navigate(['home']);
     } else {
+      alert('Login inválido.');
       this.logado = false;
     }
 
     this.evento.emit(this.logado);
+  }
+
+  public userAutenticado(): boolean {
+    return this.logado;
   }
 }
