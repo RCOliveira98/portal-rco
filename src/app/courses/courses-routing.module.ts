@@ -7,7 +7,7 @@ import { CursoDetailsComponent } from './curso-details/curso-details.component';
 
 // utilização de rotas filhas. Add o array children.
 const routes: Routes = [
-  {path: 'courses', component: CursosComponent, canActivate: [AuthGuard] , children: [
+  {path: '', component: CursosComponent, children: [
     {path: 'course/:id', component: CursoDetailsComponent},
     {path: 'course/:id/edit', component: CursoDetailsComponent}
   ]}

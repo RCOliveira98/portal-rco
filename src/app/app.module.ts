@@ -5,8 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { StudentModule } from './student/student.module';
-import { CoursesModule } from './courses/courses.module';
+// import { StudentModule } from './student/student.module';
+// import { CoursesModule } from './courses/courses.module';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
@@ -23,8 +23,8 @@ import { LoginComponent } from './login/login.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CoursesModule,
-    StudentModule,
+    // CoursesModule,
+    // StudentModule,
     FormsModule
   ],
   providers: [],
