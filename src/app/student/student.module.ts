@@ -10,6 +10,6 @@ import { AlunoDetailsComponent } from './aluno-details/aluno-details.component';
   imports: [
     CommonModule,
     StudentRoutingModule
-  ]
+  ],
 })
 export class StudentModule { }
