@@ -1,3 +1,4 @@
+import { AuthGuard } from './../guards/auth.guard';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -6,7 +7,7 @@ import { CursoDetailsComponent } from './curso-details/curso-details.component';
 
 // utilização de rotas filhas. Add o array children.
 const routes: Routes = [
-  {path: 'courses', component: CursosComponent, children: [
+  {path: 'courses', component: CursosComponent, canActivate: [AuthGuard] , children: [
     {path: 'course/:id', component: CursoDetailsComponent},
     {path: 'course/:id/edit', component: CursoDetailsComponent}
   ]}

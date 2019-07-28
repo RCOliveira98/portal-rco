@@ -12,6 +12,7 @@ export class AuthServiceService {
   constructor(private router: Router) { }
 
   public logar(user: UserModel): void {
+    console.log(user);
     if (user.name === 'rco' && user.senha === '123') {
       this.logado = true;
       // redirecione para home

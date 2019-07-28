@@ -19,8 +19,10 @@ export class LoginComponent implements OnInit {
     // this.evento = new EventEmitter<boolean>();
   }
 
-  public logar(user: UserModel): void {
-    this.autenticate.logar(user);
+  public logar(name: string, pwd: string): void {
+    this.user.name = name;
+    this.user.senha = pwd;
+    this.autenticate.logar(this.user);
   }
 
 }
