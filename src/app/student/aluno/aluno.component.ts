@@ -20,7 +20,7 @@ export class AlunoComponent implements OnInit {
   }
 
   public getStudent(id: number): StudentModel {
-    return this.servAlunos.getStudentById(id);
+    return this.servAlunos.getStudentById(id - 1);
   }
 
 }

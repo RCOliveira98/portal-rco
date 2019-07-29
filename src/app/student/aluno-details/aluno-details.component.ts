@@ -1,3 +1,4 @@
+import { IFormCanDeactivate } from './../../guards/i-form-can-deactivate';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
@@ -10,7 +11,7 @@ import { StudentModel } from './../student.model';
   templateUrl: './aluno-details.component.html',
   styleUrls: ['./aluno-details.component.css']
 })
-export class AlunoDetailsComponent implements OnInit, OnDestroy {
+export class AlunoDetailsComponent implements OnInit, OnDestroy, IFormCanDeactivate {
 
   public currentElement: StudentModel;
   private inscricao: Subscription;
@@ -26,6 +27,10 @@ export class AlunoDetailsComponent implements OnInit, OnDestroy {
     this.inscricao.unsubscribe();
   }
 
+  changeComponent(): boolean {
+    return this.changeRoute();
+  }
+
   private init(): void {
     const date = 'id';
     let currentId: number;
@@ -35,6 +40,10 @@ export class AlunoDetailsComponent implements OnInit, OnDestroy {
         this.currentElement = this.servStudent.getStudentById(currentId - 1);
       }
     );
+  }
+
+  private changeRoute(): boolean {
+    return confirm('Tem certeza que deseja sair dessa página?');
   }
 
 }
