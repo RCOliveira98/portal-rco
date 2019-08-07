@@ -19,9 +19,12 @@ export class LoginComponent implements OnInit {
     // this.evento = new EventEmitter<boolean>();
   }
 
-  public logar(name: string, pwd: string): void {
-    this.user.name = name;
-    this.user.senha = pwd;
+  onSubmit(form) {
+    console.log(form);
+    this.logar();
+  }
+
+  public logar(): void {
     this.autenticate.logar(this.user);
   }
 

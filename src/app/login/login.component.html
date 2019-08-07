@@ -1,15 +1,15 @@
 <div class="mt-5 col-md-6 offset-md-3">
-    <form class="shadow p-5 border">
+    <form class="shadow p-5 border" #formLogin="ngForm" (ngSubmit)="logar()">
         <div class="form-group">
             <label for="nameUser">Usuário</label>
-            <input #name id="nameUser" type="text" class="form-control" placeholder="Nome do usuário">
+            <input type="text" class="form-control" id="nameUser" name="name" [(ngModel)]="user.name" placeholder="Nome do usuário">
         </div>
         <div class="form-group">
             <label for="pwd">Senha</label>
-            <input #password type="password" class="form-control" id="pwd" placeholder="Password">
+            <input type="password" class="form-control" id="pwd" name="senha" [(ngModel)]="user.senha" placeholder="Password">
         </div>
         <div class='form-group'>
-            <button class='btn btn-primary float-right' (click)='logar(name.value, password.value)'>Login</button>
+            <button type="submit" class='btn btn-primary float-right'>Login</button>
         </div>
     </form>
 </div>
