@@ -13,7 +13,7 @@ export class AuthServiceService {
 
   public logar(user: UserModel): void {
     console.log(user);
-    if (user.name === 'rco' && user.senha === '123') {
+    if (user.name === 'rco@email.com' && user.senha === '123') {
       this.logado = true;
       // redirecione para home
       this.router.navigate(['home']);
