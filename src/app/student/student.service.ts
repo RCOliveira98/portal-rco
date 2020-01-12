@@ -1,60 +1,88 @@
 import { Injectable } from '@angular/core';
 
-import { StudentModel } from './student.model';
+import { User } from '../shared/user.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StudentService {
-  public myStudents: Array<StudentModel>;
+  public myStudents: Array<User>;
   constructor() { this.init(); }
 
-  public getStudentsAll(): Array<StudentModel> {
+  public getStudentsAll(): Array<User> {
     return this.myStudents;
   }
 
-  public getStudentById(id: number): StudentModel {
+  public getStudentById(id: number): User {
     return this.myStudents[id] != null ? this.myStudents[id] : null;
   }
 
   private init(): void {
+
     this.myStudents = [
       {
-        id: 1,
         name: 'Roberto Pereira Costa',
-        cpf: '12345678901',
-        email: 'aluno1@email.com'
+        email: 'aluno1@email.com',
+        password: '123a',
+        address: {
+          nation: 'Brasil',
+          cep: '64800000',
+          state: 'PI',
+          district: 'Irapua I',
+          publicPlace: 'Avenida Euripedes',
+          houseNumber: '1726',
+          complement: 'Casa das telhas'
+        },
+        kind: 2,
+        person: {
+          id: 1,
+          cpf: '12352100059',
+          dataNascimento: new Date(2000, 10, 20),
+          phone: '899944122'
+        }
       },
       {
-        id: 2,
-        name: 'Maria Karla Gomes',
-        cpf: '12345678902',
-        email: 'aluno2@email.com'
+        name: 'Maria Pereira Costa',
+        email: 'aluno2@email.com',
+        password: '123b',
+        address: {
+          nation: 'Brasil',
+          cep: '64800000',
+          state: 'PI',
+          district: 'Irapua II',
+          publicPlace: 'Avenida Euripedes2',
+          houseNumber: '209',
+          complement: 'Nonato'
+        },
+        kind: 2,
+        person: {
+          id: 1,
+          cpf: '12332100499',
+          dataNascimento: new Date(1998, 4, 22),
+          phone: '899941152'
+        }
       },
       {
-        id: 3,
-        name: 'Diego Luz Costa',
-        cpf: '12345678903',
-        email: 'aluno3@email.com'
-      },
-      {
-        id: 4,
-        name: 'Francisca Rocha Neres',
-        cpf: '12345678904',
-        email: 'aluno4@email.com'
-      },
-      {
-        id: 5,
-        name: 'Pedro Null Static',
-        cpf: '12345678905',
-        email: 'aluno5@email.com'
-      },
-      {
-        id: 6,
-        name: 'Geovana Pereira Luz',
-        cpf: '12345678906',
-        email: 'aluno6@email.com'
-      },
-    ]
+        name: 'Juliano Pereira Costa',
+        email: 'aluno3@email.com',
+        password: '123c',
+        address: {
+          nation: 'Brasil',
+          cep: '64800000',
+          state: 'PI',
+          district: 'Meladão',
+          publicPlace: 'Rua Torres',
+          houseNumber: 'SN',
+          complement: 'Panificadora 2t'
+        },
+        kind: 2,
+        person: {
+          id: 3,
+          cpf: '12332100091',
+          dataNascimento: new Date(2001, 2, 10),
+          phone: '899941122'
+        }
+      }
+    ];
   }
 }

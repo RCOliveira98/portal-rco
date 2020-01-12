@@ -1,21 +1,44 @@
 import { Injectable, EventEmitter } from '@angular/core';
-import { UserModel } from './login/user.model';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
+
+import { User } from './shared/user.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthServiceService {
-  user: UserModel;
+  user: User;
   logado: boolean;
   evento = new EventEmitter<boolean>();
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
 
-  public logar(user: UserModel): void {
-    console.log(user);
-    if (user.name === 'rco@email.com' && user.senha === '123') {
+    this.user = {
+      name: 'Romário Coelho Oliveira',
+      email: 'rco@email.com',
+      password: '123RCO',
+      address: {
+        nation: 'Brasil',
+        cep: '64800000',
+        state: 'PI',
+        district: 'Irapua I',
+        publicPlace: 'Avenida Euripedes',
+        houseNumber: '1726',
+        complement: 'Casa das telhas'
+      },
+      kind: 2,
+      person: {
+        id: 1,
+        cpf: '12352100059',
+        dataNascimento: new Date(2000, 10, 20),
+        phone: '899944122'
+      }
+    };
+
+  }
+
+  public logar(u: User): void {
+    if (u.email === this.user.email && u.password === this.user.password) {
       this.logado = true;
-      // redirecione para home
       this.router.navigate(['home']);
     } else {
       alert('Login inválido.');
