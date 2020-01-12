@@ -8,7 +8,7 @@ export class User {
     password: string;
     address: Address;
     kind: number;
-    person: StudentModel | Instructor;
+    person: any;
 
     constructor(user?: User) {
         if (!user) {

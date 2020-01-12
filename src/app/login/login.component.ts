@@ -5,6 +5,11 @@ import { AuthServiceService } from '../auth-service.service';
 
 import { User } from '../shared/user.model';
 
+import { faLock } from '@fortawesome/free-solid-svg-icons';
+import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faKey } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-login',
@@ -16,6 +21,11 @@ export class LoginComponent implements OnInit {
   public user = new User(); // necessário instanciar o objeto
   public logado: boolean;
   @ViewChild('formLogin') form: NgForm;
+  cadeado = faLock;
+  entrar = faSignInAlt;
+  addAcount = faUserPlus;
+  pwd = faKey;
+  people = faUser;
 
   constructor(private autenticate: AuthServiceService) { }
 

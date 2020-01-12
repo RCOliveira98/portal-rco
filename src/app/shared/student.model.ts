@@ -3,6 +3,7 @@ export class StudentModel {
   cpf: string;
   dataNascimento: Date;
   phone: string;
+  sexo: string;
 
   constructor(s?: StudentModel) {
     if (s) {
@@ -10,6 +11,7 @@ export class StudentModel {
       this.cpf = s.cpf;
       this.dataNascimento = s.dataNascimento;
       this.phone = s.phone;
+      this.sexo = s.sexo;
     }
   }
 }
