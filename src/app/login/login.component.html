@@ -3,8 +3,8 @@
         <div class="form-row">
             <div class="form-group col-sm-12">
                 <label for="nameUser">Usuário</label>
-                <input #name="ngModel" required email type="text" class="form-control" id="nameUser" name="name" [(ngModel)]="user.name" placeholder="seu_email@email.com">
-                <div *ngIf="!name.valid && name.touched" class="alert alert-danger">
+                <input #email="ngModel" required email type="text" class="form-control" id="nameUser" name="email" ngModel placeholder="seu_email@email.com">
+                <div *ngIf="!email.valid && email.touched" class="alert alert-danger">
                     <p>Erro: e-mail inválido!</p>
                 </div>
             </div>
@@ -12,15 +12,15 @@
         <div class="form-row">
             <div class="form-group col-sm-12">
                 <label for="pwd">Senha</label>
-                <input #password="ngModel" required type="password" class="form-control" id="pwd" name="senha" [(ngModel)]="user.senha" placeholder="Password">
+                <input #password="ngModel" required minlength="3" type="password" class="form-control" id="pwd" name="password" ngModel placeholder="Password">
                 <div *ngIf="!password.valid && password.touched" class="alert alert-danger">
-                    <p>Erro: campo obrigatório!</p>
+                    <p>Erro: campo obrigatório e com no mínimo 03 caracteres!</p>
                 </div>
             </div>
         </div>
         <div class="form-row">
             <div class='form-group col-sm-12'>
-                <button [disabled]="!formLogin.valid" type="submit" class='btn btn-primary btn-block'>Login</button>
+                <button [disabled]="formLogin.invalid" type="submit" class='btn btn-primary btn-block'>Login</button>
             </div>
         </div>
         <div class="form-row">
@@ -28,7 +28,7 @@
                 <p class="text-info">Não possui uma conta?</p>
             </div>
             <div class="form-group col-sm-12">
-                <button type="button" class="btn btn-block btn-outline-info" routerLink="/sign-up">Cadastre-se</button>
+                <button type="button" class="btn btn-block btn-outline-dark" routerLink="/sign-up">Cadastre-se</button>
             </div>
         </div>
     </form>

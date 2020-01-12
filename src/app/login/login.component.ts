@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { UserModel } from './user.model';
-import { EventEmitter } from 'events';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+
 import { AuthServiceService } from '../auth-service.service';
+
+import { User } from '../shared/user.model';
+
 
 @Component({
   selector: 'app-login',
@@ -10,8 +13,10 @@ import { AuthServiceService } from '../auth-service.service';
 })
 export class LoginComponent implements OnInit {
 
-  public user = new UserModel(); // necessário instanciar o objeto
+  public user = new User(); // necessário instanciar o objeto
   public logado: boolean;
+  @ViewChild('formLogin') form: NgForm;
+
   constructor(private autenticate: AuthServiceService) { }
 
   ngOnInit() {
@@ -19,13 +24,13 @@ export class LoginComponent implements OnInit {
     // this.evento = new EventEmitter<boolean>();
   }
 
-  onSubmit(form) {
-    console.log(form);
+  onSubmit() {
     this.logar();
   }
 
   public logar(): void {
-    this.autenticate.logar(this.user);
+    console.log(this.form.value);
+    this.autenticate.logar(this.form.value);
   }
 
 }
