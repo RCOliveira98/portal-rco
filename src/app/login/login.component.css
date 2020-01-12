@@ -6,3 +6,19 @@
     padding: 5px;
     margin: 1px;
 }
+
+.login {
+    width: 100%;
+    height: 100%;
+    background-image: url('../../assets/imagens/login2.svg');
+}
+
+.title-login {
+    margin-top: 30px;
+    text-align: center;
+    color: rgb(184, 45, 45);
+}
+
+form {
+    background-color: rgb(255, 255, 255);
+}
