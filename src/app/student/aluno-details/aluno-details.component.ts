@@ -4,7 +4,7 @@ import { Subscription } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 
 import { StudentService } from '../student.service';
-import { StudentModel } from './../student.model';
+import { User } from 'src/app/shared/user.model';
 
 @Component({
   selector: 'app-aluno-details',
@@ -13,7 +13,7 @@ import { StudentModel } from './../student.model';
 })
 export class AlunoDetailsComponent implements OnInit, OnDestroy, IFormCanDeactivate {
 
-  public currentElement: StudentModel;
+  public currentElement: User;
   private inscricao: Subscription;
 
   constructor(private servStudent: StudentService,

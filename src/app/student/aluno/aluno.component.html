@@ -4,7 +4,7 @@
             <div class='col-sm-6'>
                 <ul class="list-group">
                     <li *ngFor="let student of alunos" class="list-group-item">
-                        <a [routerLink]="['student', student.id]" routerLinkActive="router-link-active">
+                        <a [routerLink]="['student', student.person.id]" routerLinkActive="router-link-active">
               {{student.name}} - {{student.email}}
             </a>
                     </li>

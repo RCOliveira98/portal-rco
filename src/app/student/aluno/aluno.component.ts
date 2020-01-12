@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { StudentService } from '../student.service';
+import { User } from 'src/app/shared/user.model';
 
-import { StudentModel } from './../student.model';
 
 @Component({
   selector: 'app-aluno',
@@ -11,7 +11,7 @@ import { StudentModel } from './../student.model';
 })
 export class AlunoComponent implements OnInit {
 
-  public alunos: Array<StudentModel>;
+  public alunos: Array<User>;
 
   constructor(private servAlunos: StudentService ) { }
 
@@ -19,7 +19,7 @@ export class AlunoComponent implements OnInit {
     this.alunos = this.servAlunos.getStudentsAll();
   }
 
-  public getStudent(id: number): StudentModel {
+  public getStudent(id: number): User {
     return this.servAlunos.getStudentById(id - 1);
   }
 
