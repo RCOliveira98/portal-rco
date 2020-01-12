@@ -1,5 +1,4 @@
 import { RegisterComponent } from './register/register.component';
-import { AlunosGuard } from './guards/alunos.guard';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -13,7 +12,7 @@ const routes: Routes = [
   {path: 'sign-up', component: RegisterComponent},
   {path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
   {path: 'students', loadChildren: '../app/student/student.module#StudentModule',
-  canActivate: [AuthGuard], canActivateChild: [AlunosGuard]},
+  canActivate: [AuthGuard]},
   {path: 'courses', loadChildren: '../app/courses/courses.module#CoursesModule',
   canActivate: [AuthGuard]}
 ];
@@ -21,6 +20,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [AuthGuard, AlunosGuard]
+  providers: [AuthGuard]
 })
 export class AppRoutingModule { }

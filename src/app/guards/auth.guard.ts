@@ -9,11 +9,15 @@ import { AuthServiceService } from './../auth-service.service';
 })
 export class AuthGuard implements CanActivate {
 
-  constructor(private servLogin: AuthServiceService, private roteador: Router) {}
+  constructor(
+    private servLogin: AuthServiceService,
+    private roteador: Router
+    ) {}
 
   canActivate(
     next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    state: RouterStateSnapshot
+    ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
       if (this.servLogin.userAutenticado()) {
         return true;

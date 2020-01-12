@@ -9,7 +9,6 @@ export class AlunosGuard implements CanActivateChild {
   canActivateChild(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | boolean {
-      console.log('GuardChild Student');
       console.log(next);
       console.log(state);
       return true;
